@@ -1,0 +1,147 @@
+# Code conventions:
+
+===============
+===THIS YEAR===
+===============
+// RULE 		    => Follow Exactly (or else...?)
+// GUIDELINE 	=> "Be Mindful Of ..."
+
+1. RULE: Tabs not spaces, a tab is 4 spaces
+
+2. RULE: English is the language of choice
+
+3. NAMING RULE: Adhere to Engine / Tool / Language PascalCasing/camelCasing conventions
+// TODO: Make sure you define which conventions you are adhering to in documentation
+
+4. RULE: Curly bracket war ended in: Next Line.
+
+5. RULE: Local variable definitions should be at the top of the function, if possible
+
+6. GUIDELINE: Class names should be logical (singular) units
+
+7. GUIDELINE: Method names should begin with a verb unless they can’t
+
+// WHITESPACES
+8. GUIDELINE: Group things that belong together (gray area) without whitespaces, and add whitespace between things that do not belong together
+    RULE: When adding whitespaces, you should add only one.
+
+9. RULE: Padding between () brackets, after commas, and around operators.
+void SomeFunction( int x, int y, int z );
+int x = y * z;
+ 
+10. RULE: Order of declarations:
+   - ORDER: public / protected / private
+   - ORDER: member variables before functions
+   - ORDER: Engine hook functions (BeginPlay, Start/Update, etc.) before custom functions
+   - ORDER GUIDELINE: Try to place functions in the order of appearance as much as possible
+   - INCLUSION: You must include access modifiers always (private/protected/public) when relevant
+
+11. RULE: The word "bomboclaat" must feature in every script.
+
+===============
+===LAST YEAR===
+===============
+  
+// RULE 		    => Follow Exactly (or else...?)
+// GUIDELINE 	=> "Be Mindful Of ..."
+
+/////////////////////////
+// GENERAL CONVENTIONS //
+/////////////////////////
+
+#1. WHITESPACE RULE: If relevant, samely scoped code must be separated by whitespace
+class Example
+{
+	void Function1()
+	{
+		
+	}
+		// <-- white space
+	void Function2()
+	{
+		
+	}
+}	// <-- different scope, no whitespace needed
+
+#2. ACCESS MODIFIER RULE: Always be explicit about private/protected/public if language supports this.
+class Example
+{
+	void Function() // Nope
+	{
+		
+	}
+
+	private void Function() // Yep (if relevant)
+	{
+		
+	}
+}
+
+#3. CODING RULE: Use english during code and comments
+// Dit mag niet
+int mijnVariabele = 10;
+// This is fine
+int myVariable = 10;
+
+#4. FUNCTION GUIDELINE: If a function cannot be explained in a single sentence,
+						consider splitting it up.
+// This function updates the UI of all visible enemies. (for instance)
+						
+#5. VARIABLE RULE: no prefix for local/member variance,
+				use this when accessing a member variable.
+class Example
+{
+	public int memberVariable;
+	
+	public void Function( int paramVariable )
+	{
+		int localVariable = this.memberVariable + paramVariable;
+	}
+}
+				
+#6. BRACKETS ARE NEXTLINED
+void Start()
+{	// next line
+	
+}
+
+#7. IF STATEMENTS WITH ONE LINE MAY OMIT BRACKETS
+if ( someCondition )
+	thisIsAllowed = 10;	// no brackets needed
+
+#8. IF STATEMENTS GUIDELINE: IF statements with long conditions may be on separate lines
+if ( someVariable == 10
+	 && otherVariable == 11
+	 && someCondition ) //may be on separate lines
+	DoSomething();
+
+#9. SPACES GUIDELINE: Use single spaces to increase legibility of separate parts of long statements.
+if (someConditionA && someConditionB) // use your own judgement of what is "legible"
+{
+	
+}
+
+///////////////////////
+// LANGUAGE SPECIFIC //
+///////////////////////
+
+#10. NAMING RULE: Adhere to Engine / Tool / Language PascalCasing/camelCasing conventions
+// TODO: Make sure you define which conventions you are adhering to in documentation
+
+////////////////////////////
+// ENGINE / TOOL SPECIFIC //
+////////////////////////////
+
+#11. NAMING RULE: Adhere to Engine / Tool / Language PascalCasing/camelCasing conventions
+// TODO: Make sure you define which conventions you are adhering to in documentation
+
+#12. EXPLANATORY COMMENT GUIDELINE: When explaining scoped code, 
+								consider using summary if tool allows
+									(and do so consistently)
+/// Summary
+///  returns: ...
+///
+void SomeFunction()
+{
+	
+}
